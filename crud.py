@@ -4,7 +4,10 @@ def add_drink(drink):
     drinks.append(drink)
 
 def del_drink(drink):
-    drinks.remove(drink)
+    try:
+        drinks.remove(drink)
+    except Exception:
+        print("No existe en l lista")
 
 def show_drinks():
     print("-" * 4, "My Drinks", "-" * 4)
@@ -26,11 +29,10 @@ while True:
         add_drink(drink)
     elif choice_user == 2:
         drink = input('Ingresa una bebida: ')
-        add_drink(drink)
+        del_drink(drink)
     elif choice_user == 3:
         show_drinks()
     elif choice_user == 4:
-        show_drinks()
         break
     else:
         print('Opción Incorrecta')
